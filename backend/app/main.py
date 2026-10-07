@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from backend.app.api.router import router
 from backend.app.core.config import settings
 
 
@@ -8,6 +9,8 @@ app = FastAPI(
     description="Decision-support API for enterprise change consequence analysis.",
     version=settings.app_version,
 )
+
+app.include_router(router)
 
 
 @app.get("/health")

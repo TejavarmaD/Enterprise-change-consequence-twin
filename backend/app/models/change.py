@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from sqlalchemy import String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from backend.app.models import Base
 
+
+if TYPE_CHECKING:
+    from backend.app.models.consequence_assessment import ConsequenceAssessment
 
 
 class Change(Base):
